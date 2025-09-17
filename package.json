@@ -1,0 +1,19 @@
+{
+  "name": "ezrabright-website",
+  "version": "1.0.0",
+  "description": "Ezra Bright Consulting Website with Contact Form",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "next": "^14.2.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "nodemailer": "^6.9.7"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

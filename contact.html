@@ -14,7 +14,9 @@
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&family=Roboto:wght@500;700;900&display=swap" rel="stylesheet"> 
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&family=Roboto:wght@500;700;900&display=swap"
+        rel="stylesheet">
 
     <!-- Icon Font Stylesheet -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
@@ -34,7 +36,8 @@
 
 <body>
     <!-- Spinner Start -->
-    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
         <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
             <span class="sr-only">Loading...</span>
         </div>
@@ -61,9 +64,11 @@
                     <small>+27 767 249 218</small>
                 </div>
                 <div class="h-100 d-inline-flex align-items-center">
-                    <a class="btn btn-sm-square bg-white text-primary me-1" href=""><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-sm-square bg-white text-primary me-1" href=""><i
+                            class="fab fa-facebook-f"></i></a>
                     <a class="btn btn-sm-square bg-white text-primary me-1" href=""><i class="fab fa-twitter"></i></a>
-                    <a class="btn btn-sm-square bg-white text-primary me-1" href=""><i class="fab fa-linkedin-in"></i></a>
+                    <a class="btn btn-sm-square bg-white text-primary me-1" href=""><i
+                            class="fab fa-linkedin-in"></i></a>
                     <a class="btn btn-sm-square bg-white text-primary me-0" href=""><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
@@ -86,10 +91,11 @@
                 <!-- <a href="about.html" class="nav-item nav-link">About</a> -->
                 <a href="service.html" class="nav-item nav-link">Service</a>
                 <!-- <a href="project.html" class="nav-item nav-link">Project</a> -->
-           
+
                 <a href="contact.html" class="nav-item nav-link active">Contact</a>
             </div>
-            <a href="quote.html" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Book Consultation<i class="fa fa-arrow-right ms-3"></i></a>
+            <a href="quote.html" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Book Consultation<i
+                    class="fa fa-arrow-right ms-3"></i></a>
         </div>
     </nav>
     <!-- Navbar End -->
@@ -110,7 +116,27 @@
     </div>
     <!-- Page Header End -->
 
+    <!--Form Styles and alerts-->
+    <style>
+        .alert {
+            margin-top: 1rem;
+            display: none;
+        }
 
+        .alert.show {
+            display: block;
+        }
+
+        .btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        .spinner-border-sm {
+            width: 1rem;
+            height: 1rem;
+        }
+    </style>
     <!-- Contact Start -->
     <div class="container-fluid bg-light overflow-hidden px-lg-0" style="margin: 6rem 0;">
         <div class="container contact px-lg-0">
@@ -120,46 +146,74 @@
                         <div class="section-title text-start">
                             <h1 class="display-5 mb-4">Contact Us</h1>
                         </div>
-                        <p class="mb-4"> We'd love to hear from you! Whether you have a question about our services, need assistance, or want to discuss a project, our team is here to help. Fill out the form below, and we'll get back to you promptly. Alternatively, you can reach us at <a href="mailto:info@ezrabrightconsulting.com">info@ezrabright.co.za</a> or call us at +27 767 249 218.</p>
-                        <form>
+                        <p class="mb-4"> We'd love to hear from you! Whether you have a question about our services,
+                            need assistance, or want to discuss a project, our team is here to help. Fill out the form
+                            below, and we'll get back to you promptly. Alternatively, you can reach us at <a
+                                href="mailto:info@ezrabrightconsulting.com">info@ezrabright.co.za</a> or call us at +27
+                            767 249 218.</p>
+
+                        <!-- Success/Error Messages -->
+                        <div id="successAlert" class="alert alert-success" role="alert">
+                            <strong>Success!</strong> Your message has been sent successfully. We'll get back to you
+                            soon!
+                        </div>
+
+                        <div id="errorAlert" class="alert alert-danger" role="alert">
+                            <strong>Error!</strong> <span id="errorMessage">Something went wrong. Please try
+                                again.</span>
+                        </div>
+                        <form id="contactForm" action="/api/contact" method="POST">
                             <div class="row g-3">
                                 <div class="col-md-6">
                                     <div class="form-floating">
-                                        <input type="text" class="form-control" id="name" placeholder="Your Name">
+                                        <input type="text" class="form-control" id="name" name="name"
+                                            placeholder="Your Name">
                                         <label for="name">Your Name</label>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-floating">
-                                        <input type="email" class="form-control" id="email" placeholder="Your Email">
+                                        <input type="email" class="form-control" id="email" name="email"
+                                            placeholder="Your Email">
                                         <label for="email">Your Email</label>
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <div class="form-floating">
-                                        <input type="text" class="form-control" id="subject" placeholder="Subject">
+                                        <input type="text" class="form-control" id="subject" name="subject"
+                                            placeholder="Subject">
                                         <label for="subject">Subject</label>
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <div class="form-floating">
-                                        <textarea class="form-control" placeholder="Leave a message here" id="message" style="height: 100px"></textarea>
+                                        <textarea class="form-control" placeholder="Leave a message here" id="message"
+                                            name="message" style="height: 100px"></textarea>
                                         <label for="message">Message</label>
                                     </div>
                                 </div>
                                 <div class="col-12">
-                                    <button class="btn btn-primary w-100 py-3" type="submit">Send Message</button>
+                                    <!-- <button class="btn btn-primary w-100 py-3" type="submit">Send Message</button> -->
+                                    <button class="btn btn-primary w-100 py-3" type="submit" id="submitBtn">
+                                        <span id="btnText">Send Message</span>
+                                        <div id="btnSpinner" class="spinner-border spinner-border-sm ms-2"
+                                            style="display: none;" role="status">
+                                            <span class="visually-hidden">Loading...</span>
+                                        </div>
+                                    </button>
                                 </div>
                             </div>
+                            <!-- Hidden fields for additional info -->
+                            <input type="hidden" name="_subject" id="hiddenSubject">
+                            <input type="hidden" name="_replyto" id="hiddenReply">
                         </form>
                     </div>
                 </div>
                 <div class="col-lg-6 pe-lg-0" style="min-height: 400px;">
                     <div class="position-relative h-100">
                         <iframe class="position-absolute w-100 h-100" style="object-fit: cover;"
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3001156.4288297426!2d-78.01371936852176!3d42.72876761954724!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4ccc4bf0f123a5a9%3A0xddcfc6c1de189567!2sNew%20York%2C%20USA!5e0!3m2!1sen!2sbd!4v1603794290143!5m2!1sen!2sbd"
-                        frameborder="0" allowfullscreen="" aria-hidden="false"
-                        tabindex="0"></iframe>
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3001156.4288297426!2d-78.01371936852176!3d42.72876761954724!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4ccc4bf0f123a5a9%3A0xddcfc6c1de189567!2sNew%20York%2C%20USA!5e0!3m2!1sen!2sbd!4v1603794290143!5m2!1sen!2sbd"
+                            frameborder="0" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
                     </div>
                 </div>
             </div>
@@ -168,64 +222,66 @@
     <!-- Contact End -->
 
 
- <!-- Footer Start -->
- <div class="container-fluid bg-dark text-light footer mt-5 pt-5 wow fadeIn" data-wow-delay="0.1s">
-    <div class="container py-5">
-        <div class="row g-5">
-            <div class="col-lg-3 col-md-6">
-                <h4 class="text-light mb-4">Address</h4>
-                <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Gauteng, Johannesburg</p>
-                <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+27 76 724 9218</p>
-                <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@ezrabright.co.za</p>
-                <div class="d-flex pt-2">
-                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
-                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
-                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
-                    <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark text-light footer mt-5 pt-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-light mb-4">Address</h4>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Gauteng, Johannesburg</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+27 76 724 9218</p>
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@ezrabright.co.za</p>
+                    <div class="d-flex pt-2">
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-light mb-4">Services</h4>
+                    <a class="btn btn-link" href="service.html">Business Intelligence (BI) Consulting</a>
+                    <a class="btn btn-link" href="service.html">Data Analysis</a>
+                    <a class="btn btn-link" href="service.html">Power BI Development</a>
+                    <a class="btn btn-link" href="service.html">Reporting Automation</a>
+                    <a class="btn btn-link" href="service.html">Database Design and Administration</a>
+                    <a class="btn btn-link" href="service.html">Predictive Analytics and Forecasting</a>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-light mb-4">Quick Links</h4>
+                    <a class="btn btn-link" href="about.html">About Us</a>
+                    <a class="btn btn-link" href="contact.html">Contact Us</a>
+                    <a class="btn btn-link" href="service.html">Our Services</a>
+                    <a class="btn btn-link" href="">Terms & Condition</a>
+                    <a class="btn btn-link" href="">Support</a>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-light mb-4">Newsletter</h4>
+                    <p>Stay updated with the latest insights and trends in Business Intelligence and Data Analysis.</p>
+                    <div class="position-relative mx-auto" style="max-width: 400px;">
+                        <input class="form-control border-0 w-100 py-3 ps-4 pe-5" type="text"
+                            placeholder="hello@ezrabright.co.za">
+                        <button type="button"
+                            class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
+                    </div>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6">
-                <h4 class="text-light mb-4">Services</h4>
-                <a class="btn btn-link" href="service.html">Business Intelligence (BI) Consulting</a>
-                <a class="btn btn-link" href="service.html">Data Analysis</a>
-                <a class="btn btn-link" href="service.html">Power BI Development</a>
-                <a class="btn btn-link" href="service.html">Reporting Automation</a>
-                <a class="btn btn-link" href="service.html">Database Design and Administration</a>
-                <a class="btn btn-link" href="service.html">Predictive Analytics and Forecasting</a>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <h4 class="text-light mb-4">Quick Links</h4>
-                <a class="btn btn-link" href="about.html">About Us</a>
-                <a class="btn btn-link" href="contact.html">Contact Us</a>
-                <a class="btn btn-link" href="service.html">Our Services</a>
-                <a class="btn btn-link" href="">Terms & Condition</a>
-                <a class="btn btn-link" href="">Support</a>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <h4 class="text-light mb-4">Newsletter</h4>
-                <p>Stay updated with the latest insights and trends in Business Intelligence and Data Analysis.</p>
-                <div class="position-relative mx-auto" style="max-width: 400px;">
-                    <input class="form-control border-0 w-100 py-3 ps-4 pe-5" type="text" placeholder="hello@ezrabright.co.za">
-                    <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
+        </div>
+        <div class="container">
+            <div class="copyright">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        &copy; <a class="border-bottom" href="#">EzraBright Consulting</a>, All Right Reserved.
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
+                        Designed By <a class="border-bottom" href="https://htmlcodex.com">EzraBright Consulting</a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="container">
-        <div class="copyright">
-            <div class="row">
-                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                    &copy; <a class="border-bottom" href="#">EzraBright Consulting</a>, All Right Reserved.
-                </div>
-                <div class="col-md-6 text-center text-md-end">
-                    <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-                    Designed By <a class="border-bottom" href="https://htmlcodex.com">EzraBright Consulting</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Footer End -->
+    <!-- Footer End -->
 
 
     <!-- Back to Top -->
@@ -244,5 +300,53 @@
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
 </body>
+
+<!-- contactFormJS -->
+<script>
+    document.getElementById('contactForm').addEventListener('submit', function (e) {
+        e.preventDefault();
+        const btnText = document.getElementById('btnText');
+        const btnSpinner = document.getElementById('btnSpinner');
+        btnText.textContent = 'Sending...';
+        btnSpinner.style.display = 'inline-block';
+
+        // collect form data
+        const data = {
+            name: this.name.value,
+            email: this.email.value,
+            subject: this.subject.value,
+            message: this.message.value
+        };
+
+        fetch('https://ezrabright.co.za/api/contact', { 
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+            .then(res => res.json())
+            .then(data => {
+                btnText.textContent = 'Send Message';
+                btnSpinner.style.display = 'none';
+                if (data.success) {
+                    document.getElementById('successAlert').classList.add('show');
+                    document.getElementById('errorAlert').classList.remove('show');
+                    this.reset();
+                } else {
+                    document.getElementById('errorMessage').textContent = data.error || 'Something went wrong.';
+                    document.getElementById('errorAlert').classList.add('show');
+                    document.getElementById('successAlert').classList.remove('show');
+                }
+            })
+            .catch(() => {
+                btnText.textContent = 'Send Message';
+                btnSpinner.style.display = 'none';
+                document.getElementById('errorMessage').textContent = 'Something went wrong.';
+                document.getElementById('errorAlert').classList.add('show');
+                document.getElementById('successAlert').classList.remove('show');
+            });
+    });
+</script>
 
 </html>
