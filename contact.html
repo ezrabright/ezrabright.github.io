@@ -137,91 +137,195 @@
             height: 1rem;
         }
     </style>
-    <!-- Contact Start -->
-    <div class="container-fluid bg-light overflow-hidden px-lg-0" style="margin: 6rem 0;">
-        <div class="container contact px-lg-0">
-            <div class="row g-0 mx-lg-0">
-                <div class="col-lg-6 contact-text py-5 wow fadeIn" data-wow-delay="0.5s">
-                    <div class="p-lg-5 ps-lg-0">
-                        <div class="section-title text-start">
-                            <h1 class="display-5 mb-4">Contact Us</h1>
-                        </div>
-                        <p class="mb-4"> We'd love to hear from you! Whether you have a question about our services,
-                            need assistance, or want to discuss a project, our team is here to help. Fill out the form
-                            below, and we'll get back to you promptly. Alternatively, you can reach us at <a
-                                href="mailto:info@ezrabrightconsulting.com">info@ezrabright.co.za</a> or call us at +27
-                            767 249 218.</p>
+ <!-- Contact Start -->
+<div class="container-fluid bg-light overflow-hidden px-lg-0" style="margin: 6rem 0;">
+    <div class="container contact px-lg-0">
+        <div class="row g-0 mx-lg-0">
+            <div class="col-lg-6 contact-text py-5 wow fadeIn" data-wow-delay="0.5s">
+                <div class="p-lg-5 ps-lg-0">
+                    <div class="section-title text-start">
+                        <h1 class="display-5 mb-4">Contact Us</h1>
+                    </div>
+                    <p class="mb-4">We'd love to hear from you! Whether you have a question about our services,
+                        need assistance, or want to discuss a project, our team is here to help. Fill out the form
+                        below, and we'll get back to you promptly. Alternatively, you can reach us at <a
+                            href="mailto:info@ezrabright.co.za">info@ezrabright.co.za</a> or call us at +27
+                        767 249 218.</p>
 
-                        <!-- Success/Error Messages -->
-                        <div id="successAlert" class="alert alert-success" role="alert">
-                            <strong>Success!</strong> Your message has been sent successfully. We'll get back to you
-                            soon!
-                        </div>
-
-                        <div id="errorAlert" class="alert alert-danger" role="alert">
-                            <strong>Error!</strong> <span id="errorMessage">Something went wrong. Please try
-                                again.</span>
-                        </div>
-                        <form id="contactForm" action="/api/contact" method="POST">
-                            <div class="row g-3">
-                                <div class="col-md-6">
-                                    <div class="form-floating">
-                                        <input type="text" class="form-control" id="name" name="name"
-                                            placeholder="Your Name">
-                                        <label for="name">Your Name</label>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-floating">
-                                        <input type="email" class="form-control" id="email" name="email"
-                                            placeholder="Your Email">
-                                        <label for="email">Your Email</label>
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <div class="form-floating">
-                                        <input type="text" class="form-control" id="subject" name="subject"
-                                            placeholder="Subject">
-                                        <label for="subject">Subject</label>
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <div class="form-floating">
-                                        <textarea class="form-control" placeholder="Leave a message here" id="message"
-                                            name="message" style="height: 100px"></textarea>
-                                        <label for="message">Message</label>
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <!-- <button class="btn btn-primary w-100 py-3" type="submit">Send Message</button> -->
-                                    <button class="btn btn-primary w-100 py-3" type="submit" id="submitBtn">
-                                        <span id="btnText">Send Message</span>
-                                        <div id="btnSpinner" class="spinner-border spinner-border-sm ms-2"
-                                            style="display: none;" role="status">
-                                            <span class="visually-hidden">Loading...</span>
-                                        </div>
-                                    </button>
+                    <!-- Success/Error Messages -->
+                    <div id="successAlert" class="alert alert-success" role="alert" style="display: none;">
+                        <strong>Success!</strong> Your message has been sent successfully. We'll get back to you soon!
+                    </div>
+                    <div id="errorAlert" class="alert alert-danger" role="alert" style="display: none;">
+                        <strong>Error!</strong> <span id="errorMessage">Please fill out all fields correctly.</span>
+                    </div>
+                    <form id="contactForm" action="http://192.168.137.1:8080/api/contact" method="POST">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required>
+                                    <label for="name">Your Name</label>
                                 </div>
                             </div>
-                            <!-- Hidden fields for additional info -->
-                            <input type="hidden" name="_subject" id="hiddenSubject">
-                            <input type="hidden" name="_replyto" id="hiddenReply">
-                        </form>
-                    </div>
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="email" class="form-control" id="email" name="email" placeholder="Your Email" required>
+                                    <label for="email">Your Email</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject" required>
+                                    <label for="subject">Subject</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-floating">
+                                    <textarea class="form-control" placeholder="Leave a message here" id="message" name="message" style="height: 100px" required></textarea>
+                                    <label for="message">Message</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <button class="btn btn-primary w-100 py-3" type="submit" id="submitBtn">
+                                    <span id="btnText">Send Message</span>
+                                    <div id="btnSpinner" class="spinner-border spinner-border-sm ms-2" style="display: none;" role="status">
+                                        <span class="visually-hidden">Loading...</span>
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
-                <div class="col-lg-6 pe-lg-0" style="min-height: 400px;">
-                    <div class="position-relative h-100">
-                        <iframe class="position-absolute w-100 h-100" style="object-fit: cover;"
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3001156.4288297426!2d-78.01371936852176!3d42.72876761954724!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4ccc4bf0f123a5a9%3A0xddcfc6c1de189567!2sNew%20York%2C%20USA!5e0!3m2!1sen!2sbd!4v1603794290143!5m2!1sen!2sbd"
-                            frameborder="0" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-                    </div>
+            </div>
+            <div class="col-lg-6 pe-lg-0" style="min-height: 400px;">
+                <div class="position-relative h-100">
+                    <iframe class="position-absolute w-100 h-100" style="object-fit: cover;"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3579.963490539064!2d28.04730531507992!3d-26.204102983443805!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e950c3b7d1a7b4f%3A0x6c6b2e8b7c6c6b2!2sJohannesburg%2C%20South%20Africa!5e0!3m2!1sen!2sza!4v1697644321987!5m2!1sen!2sza"
+                        frameborder="0" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Contact End -->
+</div>
+<!-- Contact End -->
 
+<!-- contactFormJS -->
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const form = document.getElementById('contactForm');
+        if (!form) {
+            console.error('Form with ID "contactForm" not found');
+            return;
+        }
 
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            console.log('Form submission triggered at', new Date().toISOString()); // Debug log
+
+            const btnText = document.getElementById('btnText');
+            const btnSpinner = document.getElementById('btnSpinner');
+            const successAlert = document.getElementById('successAlert');
+            const errorAlert = document.getElementById('errorAlert');
+            const errorMessage = document.getElementById('errorMessage');
+
+            // Client-side validation
+            const name = this.name.value.trim();
+            const email = this.email.value.trim();
+            const subject = this.subject.value.trim();
+            const message = this.message.value.trim();
+
+            console.log('Form data:', { name, email, subject, message }); // Debug log
+
+            if (name.length < 2) {
+                errorMessage.textContent = 'Name must be at least 2 characters long';
+                errorAlert.style.display = 'block';
+                successAlert.style.display = 'none';
+                console.log('Validation failed: Name too short');
+                return;
+            }
+            if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                errorMessage.textContent = 'Please provide a valid email address';
+                errorAlert.style.display = 'block';
+                successAlert.style.display = 'none';
+                console.log('Validation failed: Invalid email');
+                return;
+            }
+            if (subject.length < 5) {
+                errorMessage.textContent = 'Subject must be at least 5 characters long';
+                errorAlert.style.display = 'block';
+                successAlert.style.display = 'none';
+                console.log('Validation failed: Subject too short');
+                return;
+            }
+            if (message.length < 10) {
+                errorMessage.textContent = 'Message must be at least 10 characters long';
+                errorAlert.style.display = 'block';
+                successAlert.style.display = 'none';
+                console.log('Validation failed: Message too short');
+                return;
+            }
+
+            btnText.textContent = 'Sending...';
+            btnSpinner.style.display = 'inline-block';
+            errorAlert.style.display = 'none';
+            successAlert.style.display = 'none';
+
+            const data = { name, email, subject, message };
+
+            console.log('Sending fetch request to https://ezrabright.co.za/api/contact'); // Debug log
+            fetch('https://ezrabright.co.za/api/contact', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+                .then(res => {
+                    console.log('Fetch response status:', res.status, 'OK:', res.ok); // Debug log
+                    if (!res.ok) {
+                        throw new Error(`HTTP error! Status: ${res.status}`);
+                    }
+                    return res.json();
+                })
+                .then(data => {
+                    console.log('Response data:', data); // Debug log
+                    btnText.textContent = 'Send Message';
+                    btnSpinner.style.display = 'none';
+                    if (data.success) {
+                        console.log('Success: Displaying success alert'); // Debug log
+                        successAlert.style.display = 'block';
+                        errorAlert.style.display = 'none';
+                        form.reset();
+                        setTimeout(() => {
+                            successAlert.style.display = 'none';
+                            console.log('Success alert hidden at', new Date().toISOString()); // Debug log
+                        }, 5000);
+                    } else {
+                        console.log('Error: Displaying error alert'); // Debug log
+                        errorMessage.textContent = data.errors?.join(', ') || data.error || 'Something went wrong.';
+                        errorAlert.style.display = 'block';
+                        successAlert.style.display = 'none';
+                        setTimeout(() => {
+                            errorAlert.style.display = 'none';
+                            console.log('Error alert hidden at', new Date().toISOString()); // Debug log
+                        }, 5000);
+                    }
+                })
+                .catch(error => {
+                    console.error('Fetch error:', error.message); // Debug log
+                    btnText.textContent = 'Send Message';
+                    btnSpinner.style.display = 'none';
+                    errorMessage.textContent = 'Failed to connect to the server. Please try again later.';
+                    errorAlert.style.display = 'block';
+                    successAlert.style.display = 'none';
+                    setTimeout(() => {
+                        errorAlert.style.display = 'none';
+                        console.log('Error alert hidden at', new Date().toISOString()); // Debug log
+                    }, 5000);
+                });
+        });
+    });
+</script>
     <!-- Footer Start -->
     <div class="container-fluid bg-dark text-light footer mt-5 pt-5 wow fadeIn" data-wow-delay="0.1s">
         <div class="container py-5">
@@ -300,53 +404,4 @@
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
 </body>
-
-<!-- contactFormJS -->
-<script>
-    document.getElementById('contactForm').addEventListener('submit', function (e) {
-        e.preventDefault();
-        const btnText = document.getElementById('btnText');
-        const btnSpinner = document.getElementById('btnSpinner');
-        btnText.textContent = 'Sending...';
-        btnSpinner.style.display = 'inline-block';
-
-        // collect form data
-        const data = {
-            name: this.name.value,
-            email: this.email.value,
-            subject: this.subject.value,
-            message: this.message.value
-        };
-
-        fetch('https://ezrabright.co.za/api/contact', { 
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(data)
-        })
-            .then(res => res.json())
-            .then(data => {
-                btnText.textContent = 'Send Message';
-                btnSpinner.style.display = 'none';
-                if (data.success) {
-                    document.getElementById('successAlert').classList.add('show');
-                    document.getElementById('errorAlert').classList.remove('show');
-                    this.reset();
-                } else {
-                    document.getElementById('errorMessage').textContent = data.error || 'Something went wrong.';
-                    document.getElementById('errorAlert').classList.add('show');
-                    document.getElementById('successAlert').classList.remove('show');
-                }
-            })
-            .catch(() => {
-                btnText.textContent = 'Send Message';
-                btnSpinner.style.display = 'none';
-                document.getElementById('errorMessage').textContent = 'Something went wrong.';
-                document.getElementById('errorAlert').classList.add('show');
-                document.getElementById('successAlert').classList.remove('show');
-            });
-    });
-</script>
-
 </html>
