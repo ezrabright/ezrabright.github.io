@@ -99,3 +99,18 @@
     
 })(jQuery);
 
+  function toggleEmbed(id) {
+    const el = document.getElementById(id);
+    el.style.display = (el.style.display === "none") ? "block" : "none";
+  }// Hide all sections except the one in the URL hash
+  document.addEventListener("DOMContentLoaded", () => {
+      const allSections = document.querySelectorAll('.report-section');
+      const hash = window.location.hash; // e.g., #finance
+      if(hash) {
+          allSections.forEach(section => {
+              if('#' + section.id !== hash){
+                  section.style.display = 'none';
+              }
+          });
+      }
+  });
