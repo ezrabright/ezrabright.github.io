@@ -11,10 +11,8 @@
     };
     spinner();
     
-    
     // Initiate the wowjs
     new WOW().init();
-
 
     // Sticky Navbar
     $(window).scroll(function () {
@@ -24,8 +22,7 @@
             $('.sticky-top').removeClass('shadow-sm').css('top', '-100px');
         }
     });
-    
-    
+
     // Back to top button
     $(window).scroll(function () {
         if ($(this).scrollTop() > 300) {
@@ -39,13 +36,11 @@
         return false;
     });
 
-
     // Facts counter
     $('[data-toggle="counter-up"]').counterUp({
         delay: 10,
         time: 2000
     });
-
 
     // Header carousel
     $(".header-carousel").owlCarousel({
@@ -61,7 +56,6 @@
         ]
     });
 
-
     // Testimonials carousel
     $(".testimonial-carousel").owlCarousel({
         autoplay: true,
@@ -75,52 +69,54 @@
             '<i class="bi bi-arrow-right"></i>'
         ],
         responsive: {
-            0:{
-                items:1
-            },
-            768:{
-                items:2
-            }
+            0:{ items:1 },
+            768:{ items:2 }
         }
     });
 
-
     // Portfolio isotope and filter
-    var portfolioIsotope = $('.portfolio-container').isotope({
-        itemSelector: '.portfolio-item',
-        layoutMode: 'fitRows'
-    });
-    $('#portfolio-flters li').on('click', function () {
-        $("#portfolio-flters li").removeClass('active');
-        $(this).addClass('active');
+    var $portfolioContainer = $('.portfolio-container');
+    if ($portfolioContainer.length) {
+        var portfolioIsotope = $portfolioContainer.isotope({
+            itemSelector: '.portfolio-item',
+            layoutMode: 'fitRows'
+        });
 
-        portfolioIsotope.isotope({filter: $(this).data('filter')});
-    });
-    
+        $('#portfolio-flters li').on('click', function () {
+            $("#portfolio-flters li").removeClass('active');
+            $(this).addClass('active');
+            portfolioIsotope.isotope({filter: $(this).data('filter')});
+        });
+    }
+
 })(jQuery);
 
-  function toggleEmbed(id) {
+
+// Toggle embed sections
+function toggleEmbed(id) {
     const el = document.getElementById(id);
     el.style.display = (el.style.display === "none") ? "block" : "none";
-  }// Hide all sections except the one in the URL hash
-  document.addEventListener("DOMContentLoaded", () => {
-      const allSections = document.querySelectorAll('.report-section');
-      const hash = window.location.hash; // e.g., #finance
-      if(hash) {
-          allSections.forEach(section => {
-              if('#' + section.id !== hash){
-                  section.style.display = 'none';
-              }
-          });
-      }
-  });
+}
 
+// Hide all sections except the one in the URL hash
+document.addEventListener("DOMContentLoaded", () => {
+    const allSections = document.querySelectorAll('.report-section');
+    const hash = window.location.hash; 
+    if(hash) {
+        allSections.forEach(section => {
+            if('#' + section.id !== hash){
+                section.style.display = 'none';
+            }
+        });
+    }
+});
 
+// Contact form submission with fetch
 document.addEventListener("DOMContentLoaded", () => {
     const form = document.getElementById("contact-form");
     const status = document.getElementById("form-status");
 
-    if (form) {
+    if (form && status) {
         form.addEventListener("submit", async (e) => {
             e.preventDefault();
 
