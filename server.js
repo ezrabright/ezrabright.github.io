@@ -190,10 +190,10 @@ app.use((req, res) => {
 
 // Start server
 app.listen(PORT, () => {
-    console.log(`\n🚀 Server running on http://localhost:${PORT}`);
-    console.log(`📧 Contact API available at http://localhost:${PORT}/api/contact`);
-    console.log(`❤️  Health check: http://localhost:${PORT}/api/health\n`);
-    
+    console.log(`\n🚀 Server running on https://ezrabright.co.za:${PORT}`);
+    console.log(`📧 Contact API available at https://ezrabright.co.za:${PORT}/api/contact`);
+    console.log(`❤️  Health check: https://ezrabright.co.za:${PORT}/api/health\n`);
+
     // Log environment status
     const requiredEnvVars = ['SMTP_HOST', 'SMTP_PORT', 'SMTP_USER', 'SMTP_PASS', 'CONTACT_EMAIL'];
     const missingEnvVars = requiredEnvVars.filter(envVar => !process.env[envVar]);

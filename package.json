@@ -11,8 +11,7 @@
   "description": "ezrabright",
   "main": "index.html",
   "scripts": {
-    "start": "node server.js",
-    "dev": "nodemon server.js",
+  "build": "vercel build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
