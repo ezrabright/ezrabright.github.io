@@ -6,7 +6,7 @@ const client = new MongoClient(process.env.EZRABRIGHTDB_MONGODB_URI);
 
 async function connectDB() {
   if (!client.isConnected()) await client.connect();
-  return client.db("EzraBrightdb_Prod"); // Replace with your DB name if different
+  return client.db("EzraBrightdb_Prod"); 
 }
 
 export default async function handler(req, res) {
@@ -64,3 +64,4 @@ export default async function handler(req, res) {
     return res.status(500).json({ message: "Error sending message or saving to DB", error: error.message });
   }
 }
+
