@@ -114,3 +114,47 @@
           });
       }
   });
+
+
+
+
+
+
+
+    const form = document.getElementById("contact-form");
+  const status = document.getElementById("form-status");
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const formData = {
+      name: form.name.value,
+      email: form.email.value,
+      subject: form.subject.value,
+      message: form.message.value,
+    };
+
+    status.textContent = "Sending...";
+    status.style.color = "black";
+
+    try {
+      const res = await fetch("/api/sendmail", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      if (res.ok) {
+        status.textContent = "✅ Thank you! Your message has been sent.";
+        status.style.color = "green";
+        form.reset();
+      } else {
+        const error = await res.json();
+        status.textContent = "❌ Error: " + (error.message || "Something went wrong.");
+        status.style.color = "red";
+      }
+    } catch (err) {
+      status.textContent = "❌ Network error. Please try again later.";
+      status.style.color = "red";
+    }
+  });
