@@ -11,10 +11,8 @@
     };
     spinner();
     
-    
     // Initiate the wowjs
     new WOW().init();
-
 
     // Sticky Navbar
     $(window).scroll(function () {
@@ -24,8 +22,7 @@
             $('.sticky-top').removeClass('shadow-sm').css('top', '-100px');
         }
     });
-    
-    
+
     // Back to top button
     $(window).scroll(function () {
         if ($(this).scrollTop() > 300) {
@@ -39,13 +36,11 @@
         return false;
     });
 
-
     // Facts counter
     $('[data-toggle="counter-up"]').counterUp({
         delay: 10,
         time: 2000
     });
-
 
     // Header carousel
     $(".header-carousel").owlCarousel({
@@ -61,7 +56,6 @@
         ]
     });
 
-
     // Testimonials carousel
     $(".testimonial-carousel").owlCarousel({
         autoplay: true,
@@ -75,12 +69,8 @@
             '<i class="bi bi-arrow-right"></i>'
         ],
         responsive: {
-            0:{
-                items:1
-            },
-            768:{
-                items:2
-            }
+            0:{ items:1 },
+            768:{ items:2 }
         }
     });
   $(document).ready(function() {
@@ -102,3 +92,65 @@
     
 })(jQuery);
 
+
+// Toggle embed sections
+function toggleEmbed(id) {
+    const el = document.getElementById(id);
+    el.style.display = (el.style.display === "none") ? "block" : "none";
+}
+
+// Hide all sections except the one in the URL hash
+document.addEventListener("DOMContentLoaded", () => {
+    const allSections = document.querySelectorAll('.report-section');
+    const hash = window.location.hash; 
+    if(hash) {
+        allSections.forEach(section => {
+            if('#' + section.id !== hash){
+                section.style.display = 'none';
+            }
+        });
+    }
+});
+
+// Contact form submission with fetch
+document.addEventListener("DOMContentLoaded", () => {
+    const form = document.getElementById("contact-form");
+    const status = document.getElementById("form-status");
+
+    if (form && status) {
+        form.addEventListener("submit", async (e) => {
+            e.preventDefault();
+
+            const formData = {
+                name: form.name.value,
+                email: form.email.value,
+                subject: form.subject.value,
+                message: form.message.value,
+            };
+
+            status.textContent = "Sending...";
+            status.style.color = "black";
+
+            try {
+                const res = await fetch("/api/sendmail", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(formData),
+                });
+
+                if (res.ok) {
+                    status.textContent = "✅ Thank you! Your message has been sent.";
+                    status.style.color = "green";
+                    form.reset();
+                } else {
+                    const error = await res.json();
+                    status.textContent = "❌ Error: " + (error.message || "Something went wrong.");
+                    status.style.color = "red";
+                }
+            } catch (err) {
+                status.textContent = "❌ Network error. Please try again later.";
+                status.style.color = "red";
+            }
+        });
+    }
+});
