@@ -11,9 +11,10 @@
   "description": "ezrabright",
   "main": "index.html",
   "scripts": {
-  "build": "vercel build",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "dev": "echo \"Use 'vercel start' directly\"",
+  "start": "echo \"Use 'vercel dev' directly\"",
+  "test": "echo \"Error: no test specified\" && exit 1"
+},
   "author": "",
   "license": "ISC",
   "devDependencies": {
