@@ -1,3 +1,9 @@
 User-agent: *
+Disallow: /lib/
+Disallow: /css/
+Disallow: /js/
+Disallow: /img/temp/  # only if you keep temporary images
+
 Allow: /
+
 Sitemap: https://ezrabright.co.za/sitemap.xml
