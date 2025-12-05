@@ -388,20 +388,3 @@
 
 </html>
 
-<!-- Script: show success message without fetch (CORS-safe) -->
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    const form = document.getElementById('newsletter-form');
-    const emailInput = document.getElementById('newsletter-email');
-    const successMsg = document.getElementById('newsletter-success');
-
-    if (form && emailInput && successMsg) {
-        form.addEventListener('submit', function() {
-            // Show inline success message immediately
-            successMsg.style.display = 'block';
-            emailInput.value = ''; // clear input
-            // Note: form submits normally to Zapier via POST, no CORS issues
-        });
-    }
-});
-</script>
