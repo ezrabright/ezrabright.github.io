@@ -244,18 +244,19 @@
 
 
 
-<!-- Consultation / Services CTA Start -->
-<div class="container-fluid py-5" style="background: #f5f7fa;">
+<!-- Consultation Start -->
+<div class="container-fluid py-5" style="background: #f5f7fa;"> <!-- Soft, light gray background -->
     <div class="container px-lg-0">
         <div class="row g-0 mx-lg-0 align-items-center">
             <!-- Left: Consultation Form -->
             <div class="col-lg-6 py-5 wow fadeIn" data-wow-delay="0.5s">
                 <div class="p-lg-5 ps-lg-0">
                     <div class="section-title text-start">
-                        <h1 class="display-5 mb-4">Schedule a Complimentary Consultation</h1>
+                        <h1 class="display-5 mb-4">Schedule a Consultation</h1>
                     </div>
                     <p class="mb-4">
-                        Begin your data transformation journey with our experts. Fill out the form below and let us guide you through actionable insights for your business intelligence needs.
+                        Begin your data transformation journey with a <strong>complimentary consultation</strong>. 
+                        Our experts will guide you through actionable insights and tailored BI solutions for your business.
                     </p>
 
                     <!-- Success/Error Messages -->
@@ -266,40 +267,46 @@
                         <strong>Error!</strong> <span id="errorMessage">Please fill out all fields correctly.</span>
                     </div>
 
-                    <form id="servicesContactForm" method="POST">
+                    <form id="contactForm" method="POST">
                         <div class="row g-3">
                             <div class="col-md-6">
-                                <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required>
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required>
+                                    <label for="name">Your Name</label>
+                                </div>
                             </div>
                             <div class="col-md-6">
-                                <input type="email" class="form-control" id="email" name="email" placeholder="Your Email" required>
-                            </div>
-                            <div class="col-md-6">
-                                <input type="text" class="form-control" id="phone" name="phone" placeholder="Your Mobile">
-                            </div>
-                            <div class="col-md-6">
-                                <select class="form-select" id="service" name="service" required>
-                                    <option selected disabled>Select a Service</option>
-                                    <option value="Business Intelligence Consulting">Business Intelligence Consulting</option>
-                                    <option value="Data Analysis">Data Analysis</option>
-                                    <option value="Reporting Automation">Reporting Automation</option>
-                                    <option value="Dashboard Development">Dashboard Development</option>
-                                    <option value="Accounting & Finance Insights">Accounting & Finance Insights</option>
-                                    <option value="Other">Other</option>
-                                </select>
+                                <div class="form-floating">
+                                    <input type="email" class="form-control" id="email" name="email" placeholder="Your Email" required>
+                                    <label for="email">Your Email</label>
+                                </div>
                             </div>
                             <div class="col-12">
-                                <textarea class="form-control" id="message" name="message" placeholder="Special Note" style="height: 100px;"></textarea>
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject" required>
+                                    <label for="subject">Subject</label>
+                                </div>
                             </div>
                             <div class="col-12">
-                                <button class="btn btn-primary w-100 py-3" type="submit">Submit</button>
+                                <div class="form-floating">
+                                    <textarea class="form-control" placeholder="Leave a message here" id="message" name="message" style="height: 120px" required></textarea>
+                                    <label for="message">Message</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <button class="btn btn-primary w-100 py-3" type="submit" id="submitBtn">
+                                    <span id="btnText">Send Message</span>
+                                    <div id="btnSpinner" class="spinner-border spinner-border-sm ms-2" style="display: none;" role="status">
+                                        <span class="visually-hidden">Loading...</span>
+                                    </div>
+                                </button>
                             </div>
                         </div>
                     </form>
                 </div>
             </div>
 
-            <!-- Right: Booking Steps -->
+            <!-- Right: Booking Process -->
             <div class="col-lg-6 py-5 wow fadeIn" data-wow-delay="0.5s">
                 <div class="p-lg-5">
                     <div class="section-title text-start">
@@ -312,7 +319,7 @@
                             </div>
                             <div>
                                 <h5>Book Your Consultation</h5>
-                                <p>Choose your preferred service and provide your details using the form.</p>
+                                <p>Fill out the form or schedule via Calendly. Let us know your business needs and preferred time.</p>
                             </div>
                         </div>
                         <div class="col-12 d-flex mb-3">
@@ -320,8 +327,8 @@
                                 <span class="badge bg-primary rounded-circle p-3 fs-5">2</span>
                             </div>
                             <div>
-                                <h5>We Prepare a Tailored Plan</h5>
-                                <p>Our experts review your business needs and design a strategy for your session.</p>
+                                <h5>We Review Your Needs</h5>
+                                <p>Our team evaluates your business requirements and prepares a tailored approach for your consultation.</p>
                             </div>
                         </div>
                         <div class="col-12 d-flex mb-3">
@@ -329,18 +336,210 @@
                                 <span class="badge bg-primary rounded-circle p-3 fs-5">3</span>
                             </div>
                             <div>
-                                <h5>Complimentary Consultation</h5>
-                                <p>Engage with our team and receive actionable insights to drive your business growth.</p>
+                                <h5>Start Your Complimentary Consultation</h5>
+                                <p>Meet with our BI experts, discuss strategies, and receive actionable insights for your business growth.</p>
                             </div>
                         </div>
                     </div>
-                    <p class="mt-4"><em>Start your journey to smarter, data-driven decisions today.</em></p>
+                    <p class="mt-4"><em>Begin your journey today and unlock the power of your data.</em></p>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<!-- Consultation / Services CTA End -->
+<!-- Consultation End -->
+<!-- Contact / Consultation Start -->
+<div class="container-fluid bg-light overflow-hidden px-lg-0" style="margin: 6rem 0;">
+    <div class="container contact px-lg-0">
+        <div class="row g-0 mx-lg-0">
+            
+            <!-- Text & Form Column -->
+            <div class="col-lg-6 contact-text py-5 wow fadeIn" data-wow-delay="0.5s">
+                <div class="p-lg-5 ps-lg-0">
+                    <div class="section-title text-start">
+                        <h1 class="display-5 mb-4">Book Your Consultation</h1>
+                    </div>
+                    <p class="mb-4">
+                        Begin your data transformation journey with a <strong>complimentary consultation</strong>. 
+                        Our team is ready to discuss tailored Business Intelligence, Data Analysis, and Reporting solutions for your business.
+                    </p>
+
+                    <!-- Direct Contact Info -->
+                    <p class="mb-4" style="font-size: 0.95rem; color: #555;">
+                        📧 <a href="mailto:info@ezrabright.co.za" style="color: #21506B;">info@ezrabright.co.za</a> | 
+                        📱 <a href="https://wa.me/27721831373" target="_blank" style="color: #21506B;">+27 72 183 1373 (WhatsApp)</a> | 
+                        ☎️ +27 12 002 6632
+                    </p>
+
+                    <!-- Success/Error Messages -->
+                    <div id="successAlert" class="alert alert-success" role="alert" style="display: none;">
+                        <strong>Success!</strong> Your message has been sent. We'll get back to you soon.
+                    </div>
+                    <div id="errorAlert" class="alert alert-danger" role="alert" style="display: none;">
+                        <strong>Error!</strong> <span id="errorMessage">Please fill out all fields correctly.</span>
+                    </div>
+
+                    <!-- Contact Form -->
+                    <form id="contactForm" method="POST">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required>
+                                    <label for="name">Your Name</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="email" class="form-control" id="email" name="email" placeholder="Your Email" required>
+                                    <label for="email">Your Email</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject" required>
+                                    <label for="subject">Subject</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-floating">
+                                    <textarea class="form-control" placeholder="Leave a message here" id="message" name="message" style="height: 100px" required></textarea>
+                                    <label for="message">Message</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <button class="btn btn-primary w-100 py-3" type="submit" id="submitBtn">
+                                    <span id="btnText">Send Message</span>
+                                    <div id="btnSpinner" class="spinner-border spinner-border-sm ms-2" style="display: none;" role="status">
+                                        <span class="visually-hidden">Loading...</span>
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                    <!-- Status message -->
+                    <div id="form-status" class="mt-3"></div>
+                </div>
+            </div>
+
+            <!-- Visual Column -->
+            <div class="col-lg-6 pe-lg-0 position-relative" style="min-height: 400px;">
+                <!-- Premium Image -->
+                <div class="position-absolute w-100 h-100">
+                    <img src="img/F3.jpg" alt="Premium Consulting" class="img-fluid w-100 h-100" style="object-fit: cover;">
+                    <div style="position: absolute; inset:0; background: rgba(33,76,107,0.4); z-index:2;"></div>
+                    <div class="position-absolute w-100 h-100 d-flex justify-content-center align-items-center text-white" style="z-index:3;">
+                        <h2 class="text-center">Your Business Intelligence Journey Starts Here</h2>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- Contact / Consultation End -->
+
+<!-- contactFormJS -->
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const form = document.getElementById('contactForm');
+        if (!form) {
+            console.error('Form with ID "contactForm" not found');
+            return;
+        }
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            const btnText = document.getElementById('btnText');
+            const btnSpinner = document.getElementById('btnSpinner');
+            const successAlert = document.getElementById('successAlert');
+            const errorAlert = document.getElementById('errorAlert');
+            const errorMessage = document.getElementById('errorMessage');
+
+            // Client-side validation
+            const name = this.name.value.trim();
+            const email = this.email.value.trim();
+            const subject = this.subject.value.trim();
+            const message = this.message.value.trim();
+            if (name.length < 2) {
+                errorMessage.textContent = 'Name must be at least 2 characters long';
+                errorAlert.style.display = 'block';
+                successAlert.style.display = 'none';
+                console.log('Validation failed: Name too short');
+                return;
+            }
+            if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                errorMessage.textContent = 'Please provide a valid email address';
+                errorAlert.style.display = 'block';
+                successAlert.style.display = 'none';
+                console.log('Validation failed: Invalid email');
+                return;
+            }
+            if (subject.length < 5) {
+                errorMessage.textContent = 'Subject must be at least 5 characters long';
+                errorAlert.style.display = 'block';
+                successAlert.style.display = 'none';
+                console.log('Validation failed: Subject too short');
+                return;
+            }
+            if (message.length < 10) {
+                errorMessage.textContent = 'Message must be at least 10 characters long';
+                errorAlert.style.display = 'block';
+                successAlert.style.display = 'none';
+                console.log('Validation failed: Message too short');
+                return;
+            }
+
+            btnText.textContent = 'Sending...';
+            btnSpinner.style.display = 'inline-block';
+            errorAlert.style.display = 'none';
+            successAlert.style.display = 'none';
+
+            const data = { name, email, subject, message };
+
+            fetch('/api/contact', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+                .then(res => {
+                    if (!res.ok) {
+                        throw new Error(`HTTP error! Status: ${res.status}`);
+                    }
+                    return res.json();
+                })
+                .then(data => {
+                    btnText.textContent = 'Send Message';
+                    btnSpinner.style.display = 'none';
+                    if (data.success) {
+                        successAlert.style.display = 'block';
+                        errorAlert.style.display = 'none';
+                        form.reset();
+                        setTimeout(() => {
+                            successAlert.style.display = 'none';
+                        }, 5000);
+                    } else {
+                        errorMessage.textContent = data.errors?.join(', ') || data.error || 'Something went wrong.';
+                        errorAlert.style.display = 'block';
+                        successAlert.style.display = 'none';
+                        setTimeout(() => {
+                            errorAlert.style.display = 'none';
+                        }, 5000);
+                    }
+                })
+                .catch(error => {
+                    btnText.textContent = 'Send Message';
+                    btnSpinner.style.display = 'none';
+                    errorMessage.textContent = 'Failed to connect to the server. Please try again later.';
+                    errorAlert.style.display = 'block';
+                    successAlert.style.display = 'none';
+                    setTimeout(() => {
+                        errorAlert.style.display = 'none';
+                    }, 5000);
+                });
+        });
+    });
+</script>
 
 
 
