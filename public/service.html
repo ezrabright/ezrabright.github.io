@@ -379,13 +379,12 @@
 </body>
 
 </html>
-
 <script>
 document.getElementById('newsletter-form').addEventListener('submit', function(e) {
-    e.preventDefault();
+    e.preventDefault(); // prevent page reload
     const email = document.getElementById('email').value;
 
-    fetch('https://hooks.zapier.com/hooks/catch/YOUR_ZAPIER_WEBHOOK_ID/', {
+    fetch('https://hooks.zapier.com/hooks/catch/25543964/ufbubkd/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email: email })
@@ -394,7 +393,11 @@ document.getElementById('newsletter-form').addEventListener('submit', function(e
         if(response.ok){
             document.getElementById('form-success').style.display = 'block';
             document.getElementById('newsletter-form').reset();
+        } else {
+            alert('Something went wrong, please try again.');
         }
-    });
+    })
+    .catch(() => alert('Something went wrong, please try again.'));
 });
 </script>
+
