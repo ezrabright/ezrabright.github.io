@@ -321,21 +321,21 @@
     <p>Subscribe to our newsletter for updates and insights.</p>
 
     <!-- Form -->
-    <form id="newsletter-form" class="position-relative" style="max-width: 400px;" 
-          action="https://hooks.zapier.com/hooks/catch/25543964/ufbubkd/" 
-          method="POST" target="_blank">
-        <input type="email" name="email" id="newsletter-email" 
-               class="form-control border-0 w-100 py-3 ps-4 pe-5"
-               placeholder="Enter your email" required>
-        <button type="submit" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">
-            Subscribe
-        </button>
-    </form>
+ <form id="newsletter-form" 
+      action="https://hooks.zapier.com/hooks/catch/25543964/ufbubkd/" 
+      method="POST" target="_blank">
+    <input type="email" name="email" id="newsletter-email" 
+           class="form-control border-0 w-100 py-3 ps-4 pe-5"
+           placeholder="Enter your email" required>
+    <button type="submit" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">
+        Subscribe
+    </button>
+</form>
 
-    <!-- Success Message -->
-    <p id="newsletter-success" class="text-success mt-2" style="display:none;">
-        Thank you for subscribing!
-    </p>
+<p id="newsletter-success" class="text-success mt-2" style="display:none;">
+    Thank you for subscribing!
+</p>
+
 </div>
 
         </div>
@@ -387,4 +387,20 @@
 </body>
 
 </html>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('newsletter-form');
+    const emailInput = document.getElementById('newsletter-email');
+    const successMsg = document.getElementById('newsletter-success');
+
+    if (form && emailInput && successMsg) {
+        form.addEventListener('submit', function() {
+            // Show inline success message immediately
+            successMsg.style.display = 'block';
+            emailInput.value = ''; // clear input
+            // Form still submits normally to Zapier via POST
+        });
+    }
+});
+</script>
 
