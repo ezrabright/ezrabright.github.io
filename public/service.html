@@ -244,57 +244,104 @@
 
 
 
+<!-- Consultation / Services CTA Start -->
+<div class="container-fluid py-5" style="background: #f5f7fa;">
+    <div class="container px-lg-0">
+        <div class="row g-0 mx-lg-0 align-items-center">
+            <!-- Left: Consultation Form -->
+            <div class="col-lg-6 py-5 wow fadeIn" data-wow-delay="0.5s">
+                <div class="p-lg-5 ps-lg-0">
+                    <div class="section-title text-start">
+                        <h1 class="display-5 mb-4">Schedule a Complimentary Consultation</h1>
+                    </div>
+                    <p class="mb-4">
+                        Begin your data transformation journey with our experts. Fill out the form below and let us guide you through actionable insights for your business intelligence needs.
+                    </p>
 
-     <!-- Quote Start -->
-     <div class="container-fluid bg-light overflow-hidden my-5 px-lg-0">
-        <div class="container quote px-lg-0">
-            <div class="row g-0 mx-lg-0">
-                <div class="col-lg-6 ps-lg-0" style="min-height: 400px;">
-                    <div class="position-relative h-100">
-                        <img class="position-absolute img-fluid w-100 h-100" src="img/F3.jpg" style="object-fit: cover;" alt="">
+                    <!-- Success/Error Messages -->
+                    <div id="successAlert" class="alert alert-success" role="alert" style="display: none;">
+                        <strong>Success!</strong> Your message has been sent. We'll get back to you shortly!
                     </div>
-                </div>
-                <div class="col-lg-6 quote-text py-5 wow fadeIn" data-wow-delay="0.5s">
-                    <div class="p-lg-5 pe-lg-0">
-                        <div class="section-title text-start">
-                            <h1 class="display-5 mb-4">Reach Out</h1>
-                        </div>
-                        <p class="mb-4 pb-2">Let us help you unlock the power of data! Get in touch to discuss tailored solutions for your business intelligence needs.</p>
-                        <form>
-                            <div class="row g-3">
-                                <div class="col-12 col-sm-6">
-                                    <input type="text" class="form-control border-0" placeholder="Your Name" style="height: 55px;">
-                                </div>
-                                <div class="col-12 col-sm-6">
-                                    <input type="email" class="form-control border-0" placeholder="Your Email" style="height: 55px;">
-                                </div>
-                                <div class="col-12 col-sm-6">
-                                    <input type="text" class="form-control border-0" placeholder="Your Mobile" style="height: 55px;">
-                                </div>
-                                <div class="col-12 col-sm-6">
-                                    <select class="form-select border-0" style="height: 55px;">
-                                        <option selected>Select A Service</option>
-                                        <option value="1">Business Intelligence Consulting</option>
-                                        <option value="2">Data Analysis</option>
-                                        <option value="3">Report Automation</option>
-                                        <option value="4">Dashboard Development</option>
-                                        <option value="5">Other</option>
-                                    </select>
-                                </div>
-                                <div class="col-12">
-                                    <textarea class="form-control border-0" placeholder="Special Note"></textarea>
-                                </div>
-                                <div class="col-12">
-                                    <button class="btn btn-primary w-100 py-3" type="submit">Submit</button>
-                                </div>
+                    <div id="errorAlert" class="alert alert-danger" role="alert" style="display: none;">
+                        <strong>Error!</strong> <span id="errorMessage">Please fill out all fields correctly.</span>
+                    </div>
+
+                    <form id="servicesContactForm" method="POST">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required>
                             </div>
-                        </form>
+                            <div class="col-md-6">
+                                <input type="email" class="form-control" id="email" name="email" placeholder="Your Email" required>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" id="phone" name="phone" placeholder="Your Mobile">
+                            </div>
+                            <div class="col-md-6">
+                                <select class="form-select" id="service" name="service" required>
+                                    <option selected disabled>Select a Service</option>
+                                    <option value="Business Intelligence Consulting">Business Intelligence Consulting</option>
+                                    <option value="Data Analysis">Data Analysis</option>
+                                    <option value="Reporting Automation">Reporting Automation</option>
+                                    <option value="Dashboard Development">Dashboard Development</option>
+                                    <option value="Accounting & Finance Insights">Accounting & Finance Insights</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+                            <div class="col-12">
+                                <textarea class="form-control" id="message" name="message" placeholder="Special Note" style="height: 100px;"></textarea>
+                            </div>
+                            <div class="col-12">
+                                <button class="btn btn-primary w-100 py-3" type="submit">Submit</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Right: Booking Steps -->
+            <div class="col-lg-6 py-5 wow fadeIn" data-wow-delay="0.5s">
+                <div class="p-lg-5">
+                    <div class="section-title text-start">
+                        <h1 class="display-6 mb-4">How It Works</h1>
                     </div>
+                    <div class="row g-4">
+                        <div class="col-12 d-flex mb-3">
+                            <div class="me-3">
+                                <span class="badge bg-primary rounded-circle p-3 fs-5">1</span>
+                            </div>
+                            <div>
+                                <h5>Book Your Consultation</h5>
+                                <p>Choose your preferred service and provide your details using the form.</p>
+                            </div>
+                        </div>
+                        <div class="col-12 d-flex mb-3">
+                            <div class="me-3">
+                                <span class="badge bg-primary rounded-circle p-3 fs-5">2</span>
+                            </div>
+                            <div>
+                                <h5>We Prepare a Tailored Plan</h5>
+                                <p>Our experts review your business needs and design a strategy for your session.</p>
+                            </div>
+                        </div>
+                        <div class="col-12 d-flex mb-3">
+                            <div class="me-3">
+                                <span class="badge bg-primary rounded-circle p-3 fs-5">3</span>
+                            </div>
+                            <div>
+                                <h5>Complimentary Consultation</h5>
+                                <p>Engage with our team and receive actionable insights to drive your business growth.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="mt-4"><em>Start your journey to smarter, data-driven decisions today.</em></p>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Quote End -->
+</div>
+<!-- Consultation / Services CTA End -->
+
 
 
     <!-- Footer Start -->
