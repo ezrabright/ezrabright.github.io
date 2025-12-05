@@ -752,3 +752,20 @@
 </body>
 
 </html>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('newsletter-form');
+    const emailInput = document.getElementById('newsletter-email');
+    const successMsg = document.getElementById('newsletter-success');
+
+    if (form && emailInput && successMsg) {
+        form.addEventListener('submit', function() {
+            // Show inline success message immediately
+            successMsg.style.display = 'block';
+            emailInput.value = ''; // clear input
+            // Form still submits normally to Zapier via POST
+        });
+    }
+});
+</script>
