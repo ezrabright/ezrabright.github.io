@@ -277,36 +277,41 @@
     <div class="container about px-lg-0">
         <div class="row g-0 mx-lg-0">
             <!-- Graphic Column -->
-            <div class="col-lg-6 ps-lg-0" style="min-height: 450px; position: relative;">
-                <!-- Premium BI Graphic / Illustration -->
-                <div class="position-relative h-100 rounded-3 overflow-hidden">
-                    <!-- Background Gradient -->
-                    <div class="position-absolute w-100 h-100" style="background: linear-gradient(135deg, rgba(33,76,107,0.25), rgba(245,129,45,0.25)); z-index:1;"></div>
-                    
-                    <!-- BI-themed Icons/Illustration -->
-                    <div class="position-absolute w-100 h-100 d-flex flex-column justify-content-center align-items-center text-white px-4" style="z-index:2;">
-                        <h2 class="text-center mb-4">Your Business Intelligence Journey Starts Here</h2>
-                        <div class="d-flex justify-content-around flex-wrap w-100 mt-3">
-                            <div class="text-center m-2">
-                                <i class="fas fa-chart-line fa-3x text-primary mb-2"></i>
-                                <p class="mb-0 text-dark fw-semibold">Analytics</p>
-                            </div>
-                            <div class="text-center m-2">
-                                <i class="fas fa-database fa-3x text-primary mb-2"></i>
-                                <p class="mb-0 text-dark fw-semibold">Data Management</p>
-                            </div>
-                            <div class="text-center m-2">
-                                <i class="fas fa-cogs fa-3x text-primary mb-2"></i>
-                                <p class="mb-0 text-dark fw-semibold">Automation</p>
-                            </div>
-                            <div class="text-center m-2">
-                                <i class="fas fa-users fa-3x text-primary mb-2"></i>
-                                <p class="mb-0 text-dark fw-semibold">Consulting</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+   <!-- Premium Graphic Column -->
+<div class="col-lg-6 ps-lg-0" style="min-height: 450px; position: relative;">
+    <div class="position-relative h-100 rounded-3 overflow-hidden">
+
+        <!-- Background Gradient + Floating Shapes -->
+        <div class="position-absolute w-100 h-100" style="background: linear-gradient(135deg, rgba(33,76,107,0.25), rgba(245,129,45,0.25)); z-index:1;">
+            <!-- Floating Circles -->
+            <div class="position-absolute rounded-circle bg-primary opacity-25" style="width: 100px; height: 100px; top: 15%; left: 10%; animation: float 6s ease-in-out infinite;"></div>
+            <div class="position-absolute rounded-circle bg-warning opacity-25" style="width: 80px; height: 80px; top: 50%; left: 70%; animation: float 8s ease-in-out infinite reverse;"></div>
+            <div class="position-absolute rounded-circle bg-info opacity-25" style="width: 120px; height: 120px; top: 75%; left: 40%; animation: float 10s ease-in-out infinite;"></div>
+        </div>
+
+        <!-- Vector Dashboard Illustration -->
+        <div class="position-absolute w-100 h-100 d-flex justify-content-center align-items-center" style="z-index:2;">
+            <img src="img/premium-bi-dashboard.png" alt="Premium BI Dashboard" class="img-fluid" style="max-height: 90%; border-radius: 15px; box-shadow: 0 20px 40px rgba(0,0,0,0.25);">
+        </div>
+
+        <!-- Headline Overlay -->
+        <div class="position-absolute w-100 h-100 d-flex justify-content-center align-items-start text-center" style="top: 20px; z-index:3;">
+            <h2 class="text-white fw-bold px-3" style="font-size:2rem; text-shadow: 1px 1px 5px rgba(0,0,0,0.5);">
+                Your Business Intelligence Journey Starts Here
+            </h2>
+        </div>
+
+    </div>
+</div>
+
+<!-- Floating Animation CSS -->
+<style>
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+}
+</style>
+
 
             <!-- Text Column -->
             <div class="col-lg-6 about-text py-5 wow fadeIn" data-wow-delay="0.5s">
