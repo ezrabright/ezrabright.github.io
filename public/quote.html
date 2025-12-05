@@ -234,6 +234,110 @@
     </div>
 </div>
 <!-- Contact End -->
+<!-- Consultation Start -->
+<div class="container-fluid py-5" style="background: #f5f7fa;"> <!-- Soft, light gray background -->
+    <div class="container px-lg-0">
+        <div class="row g-0 mx-lg-0 align-items-center">
+            <!-- Left: Consultation Form -->
+            <div class="col-lg-6 py-5 wow fadeIn" data-wow-delay="0.5s">
+                <div class="p-lg-5 ps-lg-0">
+                    <div class="section-title text-start">
+                        <h1 class="display-5 mb-4">Schedule a Consultation</h1>
+                    </div>
+                    <p class="mb-4">
+                        Begin your data transformation journey with a <strong>complimentary consultation</strong>. 
+                        Our experts will guide you through actionable insights and tailored BI solutions for your business.
+                    </p>
+
+                    <!-- Success/Error Messages -->
+                    <div id="successAlert" class="alert alert-success" role="alert" style="display: none;">
+                        <strong>Success!</strong> Your message has been sent. We'll get back to you shortly!
+                    </div>
+                    <div id="errorAlert" class="alert alert-danger" role="alert" style="display: none;">
+                        <strong>Error!</strong> <span id="errorMessage">Please fill out all fields correctly.</span>
+                    </div>
+
+                    <form id="contactForm" method="POST">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required>
+                                    <label for="name">Your Name</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="email" class="form-control" id="email" name="email" placeholder="Your Email" required>
+                                    <label for="email">Your Email</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject" required>
+                                    <label for="subject">Subject</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-floating">
+                                    <textarea class="form-control" placeholder="Leave a message here" id="message" name="message" style="height: 120px" required></textarea>
+                                    <label for="message">Message</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <button class="btn btn-primary w-100 py-3" type="submit" id="submitBtn">
+                                    <span id="btnText">Send Message</span>
+                                    <div id="btnSpinner" class="spinner-border spinner-border-sm ms-2" style="display: none;" role="status">
+                                        <span class="visually-hidden">Loading...</span>
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Right: Booking Process -->
+            <div class="col-lg-6 py-5 wow fadeIn" data-wow-delay="0.5s">
+                <div class="p-lg-5">
+                    <div class="section-title text-start">
+                        <h1 class="display-6 mb-4">How It Works</h1>
+                    </div>
+                    <div class="row g-4">
+                        <div class="col-12 d-flex mb-3">
+                            <div class="me-3">
+                                <span class="badge bg-primary rounded-circle p-3 fs-5">1</span>
+                            </div>
+                            <div>
+                                <h5>Book Your Consultation</h5>
+                                <p>Fill out the form or schedule via Calendly. Let us know your business needs and preferred time.</p>
+                            </div>
+                        </div>
+                        <div class="col-12 d-flex mb-3">
+                            <div class="me-3">
+                                <span class="badge bg-primary rounded-circle p-3 fs-5">2</span>
+                            </div>
+                            <div>
+                                <h5>We Review Your Needs</h5>
+                                <p>Our team evaluates your business requirements and prepares a tailored approach for your consultation.</p>
+                            </div>
+                        </div>
+                        <div class="col-12 d-flex mb-3">
+                            <div class="me-3">
+                                <span class="badge bg-primary rounded-circle p-3 fs-5">3</span>
+                            </div>
+                            <div>
+                                <h5>Start Your Complimentary Consultation</h5>
+                                <p>Meet with our BI experts, discuss strategies, and receive actionable insights for your business growth.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="mt-4"><em>Begin your journey today and unlock the power of your data.</em></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Consultation End -->
 
 <!-- contactFormJS -->
 <script>
