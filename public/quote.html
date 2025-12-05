@@ -152,21 +152,21 @@
             <div class="col-lg-6 contact-text py-5 wow fadeIn" data-wow-delay="0.5s">
                 <div class="p-lg-5 ps-lg-0">
                     <div class="section-title text-start">
-                        <h1 class="display-5 mb-4">Contact Us</h1>
+                        <h1 class="display-5 mb-4" style="color: #214C6B;">Schedule Your Consultation</h1>
                     </div>
-                    <p class="mb-4">
-                        We'd love to hear from you! Whether you have a question about our services, need assistance, or want to discuss a project, our team is here to help. Fill out the form below, and we'll get back to you promptly. 
-                        <strong>First two consultations are free!</strong>
+                    <p class="mb-4" style="font-size: 1.1rem; color: #333;">
+                        Unlock the full potential of your data with EzraBright Consulting.  
+                        Our team of experts will provide actionable insights tailored to your business needs.  
+                        <strong>Begin your data transformation journey with a complimentary consultation for new clients.</strong>
                         <br><br>
-                        Alternatively, reach us at 
-                        <a href="mailto:info@ezrabright.co.za">info@ezrabright.co.za</a> 
-                        or call <strong>+27 12 002 6632</strong> or 
-                        <strong><a href="https://wa.me/27721831373" target="_blank">+27 72 183 1373 (WhatsApp)</a></strong>.
+                        Contact us directly via <a href="mailto:info@ezrabright.co.za">info@ezrabright.co.za</a>  
+                        or call <strong>+27 12 002 6632</strong> / 
+                        <a href="https://wa.me/27721831373" target="_blank"><strong>+27 72 183 1373 (WhatsApp)</strong></a>.
                     </p>
 
                     <!-- Success/Error Messages -->
                     <div id="successAlert" class="alert alert-success" role="alert" style="display: none;">
-                        <strong>Success!</strong> Your message has been sent successfully. We'll get back to you soon!
+                        <strong>Success!</strong> Your message has been sent. We'll contact you shortly!
                     </div>
                     <div id="errorAlert" class="alert alert-danger" role="alert" style="display: none;">
                         <strong>Error!</strong> <span id="errorMessage">Please fill out all fields correctly.</span>
@@ -195,12 +195,12 @@
                             </div>
                             <div class="col-12">
                                 <div class="form-floating">
-                                    <textarea class="form-control" placeholder="Leave a message here" id="message" name="message" style="height: 100px" required></textarea>
+                                    <textarea class="form-control" placeholder="Leave a message here" id="message" name="message" style="height: 120px" required></textarea>
                                     <label for="message">Message</label>
                                 </div>
                             </div>
                             <div class="col-12">
-                                <button class="btn btn-primary w-100 py-3" type="submit" id="submitBtn">
+                                <button class="btn btn-primary w-100 py-3" type="submit" id="submitBtn" style="background: #F5812D; border: none;">
                                     <span id="btnText">Send Message</span>
                                     <div id="btnSpinner" class="spinner-border spinner-border-sm ms-2" style="display: none;" role="status">
                                         <span class="visually-hidden">Loading...</span>
@@ -214,20 +214,20 @@
                 </div>
             </div>
 
-            <!-- Video / Image Section -->
-            <div class="col-lg-6 pe-lg-0 position-relative" style="min-height: 400px;">
+            <!-- Premium Image / Overlay Section -->
+            <div class="col-lg-6 pe-lg-0 position-relative" style="min-height: 500px;">
                 <!-- Dark overlay -->
                 <div style="position: absolute; inset:0; background: rgba(33,76,107,0.6); z-index:2;"></div>
 
-                <!-- Video -->
-                <video class="position-absolute w-100 h-100" autoplay muted loop style="object-fit: cover; z-index:1;">
-                    <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
+                <!-- Background Image -->
+                <div class="position-absolute w-100 h-100" style="z-index:1; background: url('img/contact-bg.jpg') center center / cover no-repeat;"></div>
 
-                <!-- Optional overlay text -->
-                <div class="position-absolute w-100 h-100 d-flex justify-content-center align-items-center text-white" style="z-index:3;">
-                    <h2>Our Story in Motion</h2>
+                <!-- Overlay Text -->
+                <div class="position-absolute w-100 h-100 d-flex flex-column justify-content-center align-items-center text-white text-center px-4" style="z-index:3;">
+                    <h2 style="font-size: 2.5rem; font-weight: 700;">Partner with EzraBright Consulting</h2>
+                    <p style="font-size: 1.2rem; max-width: 400px; margin-top: 1rem;">
+                        Transform your business with data-driven strategies, actionable insights, and seamless reporting solutions.
+                    </p>
                 </div>
             </div>
         </div>
